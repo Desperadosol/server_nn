@@ -10,6 +10,10 @@ from configurateModel import create_model, INPUTS, OUTPUTS
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def index():
+    return "Hello World"
+
 @app.route('/api/prediction', methods=['POST'])
 def prediction():
     model = create_model(INPUTS,[64,64,32],OUTPUTS)
