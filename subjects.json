@@ -1,0 +1,87 @@
+[
+    {
+        "name": "English",
+        "score": 40.00,
+        "group": "group1"
+    },
+    {
+        "name": "Polish",
+        "score": 48.75,
+        "group": "group1"
+    },
+    {
+        "name": "English",
+        "score": 48.75,
+        "group": "group2"
+    },
+    {
+        "name": "Spanish",
+        "score": 51.25,
+        "group": "group2"
+    },
+    {
+        "name": "German",
+        "score": 48.75,
+        "group": "group2"
+    },
+    {
+        "name": "Business&Management",
+        "score": 48.75,
+        "group": "group3"
+    },
+    {
+        "name": "Geography",
+        "score": 48.75,
+        "group": "group3"
+    },
+    {
+        "name": "History",
+        "score": 48.75,
+        "group": "group3"
+    },
+    {
+        "name": "Psychology",
+        "score": 51.25,
+        "group": "group3"
+    },
+    {
+        "name": "Biology",
+        "score": 48.75,
+        "group": "group4"
+    },
+    {
+        "name": "Physics",
+        "score": 51.25,
+        "group": "group4"
+    },
+    {
+        "name": "Chemistry",
+        "score": 48.75,
+        "group": "group4"
+    },
+    {
+        "name": "Computer-Science",
+        "score": 48.75,
+        "group": "group4"
+    },
+    {
+        "name": "Mathematics-AA",
+        "score": 51.25,
+        "group": "group5"
+    },
+    {
+        "name": "Mathematics-AI",
+        "score": 48.75,
+        "group": "group5"
+    },
+    {
+        "name": "Art",
+        "score": 51.25,
+        "group": "group6"
+    },
+    {
+        "name": "Music",
+        "score": 48.75,
+        "group": "group6"
+    }
+]
