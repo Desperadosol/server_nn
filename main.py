@@ -17,7 +17,7 @@ def index():
 @app.route('/api/prediction', methods=['POST'])
 def prediction():
     model = create_model(INPUTS,[64,64,32],OUTPUTS)
-    model.load_weights('./model.keras')
+    model.load_weights('./model1.keras')
     inputs = request.get_json()['answers']
     prediction = model.predict(np.array([inputs]))[0]
     print(prediction)
@@ -34,7 +34,7 @@ def prediction():
 @app.route('/api/train', methods = ['POST'])
 def train_model():
     model = create_model(INPUTS,[64,64,32],OUTPUTS)
-    model.load_weights('./model.keras')
+    model.load_weights('./model1.keras')
     inputs = request.get_json()['answers']
     targets = request.get_json()['targets']
     try:

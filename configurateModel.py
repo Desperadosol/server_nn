@@ -20,5 +20,5 @@ def create_model(num_q: int, layers: list, num_s: int):
 
 if __name__ == "__main__":
     model = create_model(INPUTS,[64,64,32],OUTPUTS)
-    model.save('./model.keras')
+    model.save('./model1.keras')
 
