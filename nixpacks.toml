@@ -1,2 +1,2 @@
 [phases.setup]
-nixPkgs = ['python310', 'gcc']
+nixPkgs = ['python39', 'gcc']
