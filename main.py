@@ -16,7 +16,7 @@ def index():
 
 @app.route('/api/prediction', methods=['POST'])
 def prediction():
-    model = create_model(INPUTS,[64,64,32],OUTPUTS)
+    model = create_model(INPUTS, 64, 64, 32, OUTPUTS)
     model.load_weights('./model1.keras')
     inputs = request.get_json()['answers']
     prediction = model.predict(np.array([inputs]))[0]
@@ -33,7 +33,7 @@ def prediction():
 
 @app.route('/api/train', methods = ['POST'])
 def train_model():
-    model = create_model(INPUTS,[64,64,32],OUTPUTS)
+    model = create_model(INPUTS, 64, 64, 32, OUTPUTS)
     model.load_weights('./model1.keras')
     inputs = request.get_json()['answers']
     targets = request.get_json()['targets']
@@ -52,4 +52,5 @@ def get_sample():
     return { "sample": generateSample(subjects)}
 
 if __name__ == "__main__":
-    app.run(debug=True, port=os.getenv("PORT", default=5000))
+    # app.run(debug=True, port=os.getenv("PORT", default=5000))
+    app.run()
