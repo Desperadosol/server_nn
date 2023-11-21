@@ -16,8 +16,8 @@ def index():
 
 @app.route('/api/prediction', methods=['POST'])
 def prediction():
-    model = create_model(INPUTS, 64, 64, 32, OUTPUTS)
-    model.load_weights('./model1.keras')
+    # model = create_model(INPUTS, 64, 64, 32, OUTPUTS)
+    model = keras.models.load_model('./model1.keras')
     inputs = request.get_json()['answers']
     prediction = model.predict(np.array([inputs]))[0]
     print(prediction)
