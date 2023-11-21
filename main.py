@@ -1,6 +1,6 @@
 from flask import Flask, request
 from flask_cors import CORS
-import tensorflow as tf
+from keras.models import load_model
 import numpy as np
 import json
 
@@ -16,8 +16,9 @@ def index():
 
 @app.route('/api/prediction', methods=['POST'])
 def prediction():
-    model = create_model(18, 64, 64, 32, 16)
-    model.load_weights('./model.keras')
+    model = load_model('model.h5')
+    # model = create_model(18, 64, 64, 32, 16)
+    # model.load_weights('./model.keras')
     inputs = request.get_json()['answers']
     prediction = model.predict(np.array([inputs]))[0]
     print(prediction)
@@ -33,8 +34,9 @@ def prediction():
 
 @app.route('/api/train', methods = ['POST'])
 def train_model():
-    model = create_model(18, 64, 64, 32, 16)
-    model.load_weights('./model.keras')
+    model = load_model('model.h5')
+    # model = create_model(18, 64, 64, 32, 16)
+    # model.load_weights('./model.keras')
     inputs = request.get_json()['answers']
     targets = request.get_json()['targets']
     try:

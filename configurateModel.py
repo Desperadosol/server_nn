@@ -17,5 +17,5 @@ def create_model(num_q: int, a, b, c, num_s: int):
 
 if __name__ == "__main__":
     model = create_model(18, 64, 64, 32, 16)
-    model.save('./model.keras')
+    model.save('./model.h5')
 
