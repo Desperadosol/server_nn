@@ -29,7 +29,8 @@ def prediction():
     print(subjects)
           
     return {'recommendations': [float(i) for i in prediction],
-            'subjects': subjects}
+            'subjects': subjects,
+            "sample": generateSample(subjects)}
 
 
 @app.route('/api/train', methods = ['POST'])
@@ -47,12 +48,11 @@ def train_model():
         result = "Error: " + str(e)
     return { "result":  result}
 
-
-@app.route('/api/sample', methods = ['POST'])
-def get_sample():
-    subjects = request.get_json()['subjects']
-    return { "sample": generateSample(subjects)}
-
 if __name__ == "__main__":
     # app.run(debug=True, port=os.getenv("PORT", default=5000))
     app.run()
+    
+# @app.route('/api/sample', methods = ['POST'])
+# def get_sample():
+#     subjects = request.get_json()['subjects']
+#     return { "sample": generateSample(subjects)}
