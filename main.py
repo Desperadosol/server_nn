@@ -21,12 +21,11 @@ def prediction():
     # model.load_weights('./model.keras')
     inputs = request.get_json()['answers']
     prediction = model.predict(np.array([inputs]))[0]
-    print(prediction)
+    print("Predicted successfully")
     
     subjects = request.get_json()['subjects']
     for i in range(len(prediction)):
         subjects[i]['score'] = round(float(prediction[i]*100), 2)
-    print(subjects)
           
     return {'recommendations': [float(i) for i in prediction],
             'subjects': subjects,
