@@ -41,10 +41,11 @@ def train_model():
     targets = request.get_json()['targets']
     try:
         model.fit(np.array([inputs]), np.array([targets]), epochs=5)
-        model.save('./model.keras')
+        model.save('./model.h5')
         result = "Model trained"
     except Exception as e:
         result = "Error: " + str(e)
+    print(result)
     return { "result":  result}
 
 if __name__ == "__main__":
